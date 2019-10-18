@@ -6,11 +6,13 @@ A very simple python bot that allows you to perform multiplayer elo calculations
 Only supports the command '&score [names]' where names is as many names as you would like, ordered by performance.
 E.g. if four players played a game, player3 came in 1st, player2 came in 2nd, player4 came in third, and player1 came in 1st you would run '&score player3 player2 player4 player1'
 
-This also only works in the 'coup' channel of your server.
+### You need a config
+
+Create a config.ini file with the following contents in the root directory, add your own token and channel name.
 
 ~~~
 [DEFAULT]
-token = NjM0NTkwNDIzNTc4MzEyNzI1.XakueQ.gzzLnJ4YHeudIKbseQ0zj7QONgE
+token = your_token_here
 channel = coup
 
 [SCORES]
