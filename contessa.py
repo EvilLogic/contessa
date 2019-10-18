@@ -15,10 +15,6 @@ async def on_ready():
     print(bot.user.id)
     print('------')
 
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
 def update_config():
     with open('config.ini', 'w') as configfile:
         config.write(configfile)
@@ -62,9 +58,10 @@ async def on_message(message):
         config['SCORES'][rankings[i]] = str(winner)
         config['SCORES'][rankings[i + 1]] = str(loser)
 
+    # Print out the results
     msg = ''
     for i in rankings:
-        msg += i + ' is now rank ' + config['SCORES'][i] + '\n'
+        msg += i + ' is now rank ' + str(config['SCORES'][i])[:6] + '\n'
     await message.channel.send(msg)
     update_config()
 
